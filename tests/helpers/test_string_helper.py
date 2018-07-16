@@ -14,3 +14,11 @@ class TestStringHelper(TestCase):
             string_helper.reverse('かるいきびんなこねこ'),
             'こねこなんびきいるか'
         )
+
+    def test_odd(self):
+        self.assertEqual(string_helper.odd('パタトクカシーー'), 'パトカー')
+        self.assertEqual(string_helper.odd('プチリョンコ'), 'プリン')
+
+    def test_even(self):
+        self.assertEqual(string_helper.even('パタトクカシーー'), 'タクシー')
+        self.assertEqual(string_helper.even('プチリョンコ'), 'チョコ')
