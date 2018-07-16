@@ -22,3 +22,10 @@ class TestStringHelper(TestCase):
     def test_even(self):
         self.assertEqual(string_helper.even('パタトクカシーー'), 'タクシー')
         self.assertEqual(string_helper.even('プチリョンコ'), 'チョコ')
+
+    def test_alternate(self):
+        with self.assertRaises(ValueError):
+            string_helper.alternate('はみがき', 'むしば')
+
+        actual = string_helper.alternate('プリン', 'チョコ')
+        self.assertEqual(actual, 'プチリョンコ')
