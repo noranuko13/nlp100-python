@@ -30,3 +30,24 @@ def even(text) -> str:
     :return: String combining even-numbered characters.
     """
     return text[1::2]
+
+
+def alternate(first, second) -> str:
+    """
+    Combine two words alternately.
+    TODO: 「はむみしがばき」「ブシャラモシジ」
+          different length, Yōon (拗音)
+
+    :param first: First word.
+    :param second: Second word.
+    :rtype: str
+    :return: The result of string (ひとつとびぶったい).
+    """
+    if len(first) != len(second):
+        raise ValueError('Different length strings not available.')
+
+    characters = []
+    for f, s in zip(first, second):
+        characters += f + s
+
+    return ''.join(characters)
