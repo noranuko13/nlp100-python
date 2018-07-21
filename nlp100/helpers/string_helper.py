@@ -1,3 +1,8 @@
+from typing import List
+import re
+import string
+
+
 def reverse(text) -> str:
     """
     Reverse order of characters in a string.
@@ -51,3 +56,34 @@ def alternate(first, second) -> str:
         characters += f + s
 
     return ''.join(characters)
+
+
+def remove_punctuation(text) -> str:
+    """
+    Get String without Punctuation Symbol.
+
+    :param str text: String to convert.
+    :rtype: str
+    :return: String without Punctuation.
+    """
+    translator = str.maketrans('', '', string.punctuation)
+    return text.translate(translator)
+
+
+def split_into_words(text) -> List[str]:
+    """
+    Convert text into word list.
+    Delimiter: Half-width Space.
+
+    :param str text: Text to be converted into words.
+    :rtype: List[str]
+    :return: Converted word list.
+    """
+    text = text.strip()
+    pattern = re.compile(r'[{0}]+'.format(string.whitespace))
+    text = re.sub(pattern, ' ', text)
+
+    if len(text) == 0:
+        return []
+
+    return text.split(' ')
