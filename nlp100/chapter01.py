@@ -18,3 +18,14 @@ def q03(text) -> List[int]:
     text = string_helper.remove_punctuation(text)
     words = string_helper.split_into_words(text)
     return [len(word) for word in words]
+
+
+def q04(text, numbers):
+    chemical_symbols = {}
+    text = string_helper.remove_punctuation(text)
+    words = string_helper.split_into_words(text)
+
+    for i, word in enumerate(words, start=1):
+        chemical_symbols[word[0:1 if i in numbers else 2]] = i
+
+    return chemical_symbols
