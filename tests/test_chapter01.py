@@ -31,3 +31,13 @@ class TestChapter01(TestCase):
                     'Ca': 20}
 
         self.assertEqual(chapter01.q04(text, numbers), expected)
+
+    def test_q05(self):
+        text = 'I am an NLPer'
+
+        expected_words = [['I', 'am'], ['am', 'an'], ['an', 'NLPer']]
+        self.assertEqual(chapter01.q05_word(text), expected_words)
+
+        expected_chars = ['I ', ' a', 'am', 'm ', ' a', 'an',
+                          'n ', ' N', 'NL', 'LP', 'Pe', 'er']
+        self.assertEqual(chapter01.q05_char(text), expected_chars)
