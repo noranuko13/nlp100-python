@@ -29,3 +29,15 @@ class TestStringHelper(TestCase):
 
         actual = string_helper.alternate('プリン', 'チョコ')
         self.assertEqual(actual, 'プチリョンコ')
+
+    def test_remove_punctuation(self):
+        alphabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+        number = '0123456789'
+        symbol = '!"#$%&\'()-^@[;:],./=~|`{+*}<>?_'
+
+        actual = string_helper.remove_punctuation(alphabet + symbol + number)
+        self.assertEqual(actual, alphabet + number)
+
+    def test_split_into_words(self):
+        actual = string_helper.split_into_words('Meow!  I like cats. ')
+        self.assertEqual(actual, ['Meow!', 'I', 'like', 'cats.'])
