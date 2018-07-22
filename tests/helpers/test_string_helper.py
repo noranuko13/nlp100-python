@@ -41,3 +41,15 @@ class TestStringHelper(TestCase):
     def test_split_into_words(self):
         actual = string_helper.split_into_words('Meow!  I like cats. ')
         self.assertEqual(actual, ['Meow!', 'I', 'like', 'cats.'])
+
+    def test_n_gram(self):
+        text = 'にくきゅう'
+
+        actual1 = ['に', 'く', 'き', 'ゅ', 'う']
+        self.assertEqual(string_helper.n_gram(text, 1), actual1)
+
+        actual2 = ['にく', 'くき', 'きゅ', 'ゅう']
+        self.assertEqual(string_helper.n_gram(text, 2), actual2)
+
+        actual3 = ['にくき', 'くきゅ', 'きゅう']
+        self.assertEqual(string_helper.n_gram(text, 3), actual3)

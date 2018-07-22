@@ -1,6 +1,8 @@
 from typing import List
 import re
 import string
+from typing import TypeVar
+ListStr = TypeVar('ListStr', List[str], List[List[str]])
 
 
 def reverse(text) -> str:
@@ -87,3 +89,14 @@ def split_into_words(text) -> List[str]:
         return []
 
     return text.split(' ')
+
+
+def n_gram(target, n) -> ListStr:
+    """
+    Generate N-gram.
+
+    :param target: Words or Word lists to be converted into N-gram.
+    :param int n: Number of characters per n-gram.
+    :return: N-gram.
+    """
+    return [target[i:i + n] for i in range(0, len(target) - n + 1)]
