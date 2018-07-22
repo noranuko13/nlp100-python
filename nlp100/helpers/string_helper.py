@@ -53,7 +53,7 @@ def alternate(first, second) -> str:
     if len(first) != len(second):
         raise ValueError('Different length strings not available.')
 
-    characters = []
+    characters = []  # type: List[str]
     for f, s in zip(first, second):
         characters += f + s
 
