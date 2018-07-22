@@ -4,6 +4,7 @@
 
 ## Checklist
 
+- [ ] mypy
 - [ ] docstring
 - [ ] unittest
 - [ ] pycodestyle
