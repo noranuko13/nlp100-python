@@ -1,4 +1,5 @@
 from nlp100.helpers import string_helper
+from typing import cast
 from typing import Dict
 from typing import List
 
@@ -34,8 +35,8 @@ def q04(text, numbers) -> Dict[str, int]:
 
 def q05_word(text) -> List[List[str]]:
     words = string_helper.split_into_words(text)
-    return string_helper.n_gram(words, 2)
+    return cast(List[List[str]], string_helper.n_gram(words, 2))
 
 
 def q05_char(text) -> List[str]:
-    return string_helper.n_gram(text, 2)
+    return cast(List[str], string_helper.n_gram(text, 2))
