@@ -1,8 +1,7 @@
 from typing import List
+from typing import Union
 import re
 import string
-from typing import TypeVar
-ListStr = TypeVar('ListStr', List[str], List[List[str]])
 
 
 def reverse(text) -> str:
@@ -53,7 +52,7 @@ def alternate(first, second) -> str:
     if len(first) != len(second):
         raise ValueError('Different length strings not available.')
 
-    characters = []
+    characters = []  # type: List[str]
     for f, s in zip(first, second):
         characters += f + s
 
@@ -91,7 +90,7 @@ def split_into_words(text) -> List[str]:
     return text.split(' ')
 
 
-def n_gram(target, n) -> ListStr:
+def n_gram(target, n) -> Union[List[str], List[List[str]]]:
     """
     Generate N-gram.
 
