@@ -10,10 +10,7 @@ class TestStringHelper(TestCase):
         self.assertEqual(string_helper.reverse('stressed'), 'desserts')
         self.assertEqual(string_helper.reverse('0123456789'), '9876543210')
 
-        self.assertEqual(
-            string_helper.reverse('かるいきびんなこねこ'),
-            'こねこなんびきいるか'
-        )
+        self.assertEqual(string_helper.reverse('かるいきびんなこねこ'), 'こねこなんびきいるか')
 
     def test_odd(self):
         self.assertEqual(string_helper.odd('パタトクカシーー'), 'パトカー')
