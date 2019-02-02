@@ -2,6 +2,7 @@ from nlp100.helpers import string_helper
 from typing import cast
 from typing import Dict
 from typing import List
+from typing import Set
 
 
 def q00(word) -> str:
@@ -40,3 +41,17 @@ def q05_word(text) -> List[List[str]]:
 
 def q05_char(text) -> List[str]:
     return cast(List[str], string_helper.n_gram(text, 2))
+
+
+def q06_union(x, y) -> Set[str]:
+    return x.union(y)
+
+
+def q06_intersection(x, y) -> Set[str]:
+    return x.intersection(y)
+
+
+def q06_symmetric_difference(x, y) -> Set[str]:
+    xy = x.difference(y)
+    yx = y.difference(x)
+    return xy.union(yx)
