@@ -38,3 +38,23 @@ class TestChapter01(TestCase):
 
         expected_chars = ['I ', ' a', 'am', 'm ', ' a', 'an', 'n ', ' N', 'NL', 'LP', 'Pe', 'er']
         self.assertEqual(chapter01.q05_char(text), expected_chars)
+
+    def test_q06(self):
+        # x = {'ap', 'ar', 'pa', 'ra', 'di', 'is', 'ad', 'se'}
+        # y = {'ap', 'ar', 'pa', 'ra', 'ag', 'ph', 'gr'}
+        x = set(chapter01.q05_char('paraparaparadise'))
+        y = set(chapter01.q05_char('paragraph'))
+
+        expected_union = {'ap', 'ar', 'pa', 'ra',
+                          'di', 'is', 'ad', 'se', 'ag', 'ph', 'gr'}
+        self.assertEqual(chapter01.q06_union(x, y), expected_union)
+
+        expected_intersection = {'ap', 'ar', 'pa', 'ra'}
+        self.assertEqual(chapter01.q06_intersection(x, y), expected_intersection)
+
+        expected_symmetric_differences = {'di', 'is', 'ad', 'se', 'ag', 'ph', 'gr'}
+        self.assertEqual(chapter01.q06_symmetric_difference(x, y), expected_symmetric_differences)
+
+        z = {'se'}
+        self.assertTrue(z.issubset(x))
+        self.assertFalse(z.issubset(y))
