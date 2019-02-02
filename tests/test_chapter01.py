@@ -63,3 +63,12 @@ class TestChapter01(TestCase):
         self.assertEqual(chapter01.q07_template('x', 'y', 'z'), 'x時のyはz')
         self.assertEqual(chapter01.q07_template(12, '気温', 22.4), '12時の気温は22.4')
         self.assertEqual(chapter01.q07_template(3, 'おやつ', '金米糖'), '3時のおやつは金米糖')
+
+    def test_q08(self):
+        plain = 'Hi He Lied Because Boron Could Not Oxidize Fluorine.'
+        expected = 'Hr Hv Lrvw Bvxzfhv Blilm Clfow Nlg Ocrwrav Foflirmv.'
+
+        ciphertext = chapter01.q08(plain)
+        self.assertEqual(ciphertext, expected)
+
+        self.assertEqual(chapter01.q08(ciphertext), plain)
