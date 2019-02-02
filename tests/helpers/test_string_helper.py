@@ -1,5 +1,6 @@
 from nlp100.helpers import string_helper
 from unittest import TestCase
+import re
 
 
 class TestStringHelper(TestCase):
@@ -62,3 +63,10 @@ class TestStringHelper(TestCase):
 
         symbol = '!"#$%&\'()-^@[;:],./=~|`{+*}<>?_'
         self.assertEqual(string_helper.cipher(symbol), symbol)
+
+    def test_typoglycemia(self):
+        self.assertEqual(string_helper.typoglycemia(''), '')
+        self.assertEqual(string_helper.typoglycemia('1 12 123 1234'), '1 12 123 1234')
+
+        actual = string_helper.typoglycemia('12345')
+        self.assertTrue(re.match(r'1(234|243|324|342|423|432)5', actual))

@@ -65,3 +65,7 @@ def q07_template(time, subject, complement) -> str:
 
 def q08(text) -> str:
     return string_helper.cipher(text)
+
+
+def q09(text) -> str:
+    return string_helper.typoglycemia(text)

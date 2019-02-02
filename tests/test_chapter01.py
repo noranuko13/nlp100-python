@@ -1,5 +1,6 @@
 from nlp100 import chapter01
 from unittest import TestCase
+import re
 
 
 class TestChapter01(TestCase):
@@ -72,3 +73,14 @@ class TestChapter01(TestCase):
         self.assertEqual(ciphertext, expected)
 
         self.assertEqual(chapter01.q08(ciphertext), plain)
+
+    def test_q09(self):
+        # TODO: Strict test
+        text = 'I couldn\'t believe that I could actually understand what I was reading : ' \
+               'the phenomenal power of the human mind .'
+        pattern = r'I c[ouldn\']{6}t b[eliev]{5}e that ' \
+                  r'I c[oul]{3}d a[ctuall]{6}y u[nderstan]{8}d what I was r[eadin]{5}g : ' \
+                  r'the p[henomena]{8}l p[owe]{3}r of the h[uma]{3}n mind .'
+
+        actual = chapter01.q09(text)
+        self.assertTrue(re.match(pattern, actual))

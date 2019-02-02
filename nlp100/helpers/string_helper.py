@@ -2,6 +2,7 @@ from typing import List
 from typing import Union
 import re
 import string
+import random
 
 
 def reverse(text) -> str:
@@ -113,3 +114,21 @@ def cipher(text) -> str:
         result += chr(219 - ord(char)) if char.islower() else char
 
     return result
+
+
+def typoglycemia(text) -> str:
+    """
+    Generate Typoglycemia.
+
+    :param text: Text to be converted into Typoglycemia.
+    :return: Typoglycemia.
+    """
+    words = []
+    for word in split_into_words(text):
+        if len(word) <= 4:
+            words.append(word)
+        else:
+            shuffle = random.sample(word[1:len(word) - 1], len(word) - 2)
+            words.append(word[0] + ''.join(shuffle) + word[-1])
+
+    return ' '.join(words)
