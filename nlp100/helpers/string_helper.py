@@ -99,3 +99,17 @@ def n_gram(target, n) -> Union[List[str], List[List[str]]]:
     :return: N-gram.
     """
     return [target[i:i + n] for i in range(0, len(target) - n + 1)]
+
+
+def cipher(text) -> str:
+    """
+    Encrypt or Decrypt the text.
+
+    :param str text: Text to be encrypted or decrypted.
+    :return: Encrypted or Decrypted text.
+    """
+    result = ''
+    for char in text:
+        result += chr(219 - ord(char)) if char.islower() else char
+
+    return result

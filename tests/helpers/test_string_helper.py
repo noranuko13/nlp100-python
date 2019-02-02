@@ -50,3 +50,15 @@ class TestStringHelper(TestCase):
 
         actual3 = ['にくき', 'くきゅ', 'きゅう']
         self.assertEqual(string_helper.n_gram(text, 3), actual3)
+
+    def test_cipher(self):
+        self.assertEqual(string_helper.cipher('abcdefghijklmnopqrstuvwxyz'),
+                         'zyxwvutsrqponmlkjihgfedcba')
+        self.assertEqual(string_helper.cipher('ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                         'ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+
+        number = '0123456789'
+        self.assertEqual(string_helper.cipher(number), number)
+
+        symbol = '!"#$%&\'()-^@[;:],./=~|`{+*}<>?_'
+        self.assertEqual(string_helper.cipher(symbol), symbol)

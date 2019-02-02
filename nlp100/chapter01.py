@@ -61,3 +61,7 @@ def q06_symmetric_difference(x, y) -> Set[str]:
 def q07_template(time, subject, complement) -> str:
     template = Template('$time時の$subjectは$complement')
     return template.substitute(time=time, subject=subject, complement=complement)
+
+
+def q08(text) -> str:
+    return string_helper.cipher(text)
