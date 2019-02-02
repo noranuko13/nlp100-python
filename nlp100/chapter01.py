@@ -3,6 +3,7 @@ from typing import cast
 from typing import Dict
 from typing import List
 from typing import Set
+from string import Template
 
 
 def q00(word) -> str:
@@ -55,3 +56,8 @@ def q06_symmetric_difference(x, y) -> Set[str]:
     xy = x.difference(y)
     yx = y.difference(x)
     return xy.union(yx)
+
+
+def q07_template(time, subject, complement) -> str:
+    template = Template('$time時の$subjectは$complement')
+    return template.substitute(time=time, subject=subject, complement=complement)

@@ -58,3 +58,8 @@ class TestChapter01(TestCase):
         z = {'se'}
         self.assertTrue(z.issubset(x))
         self.assertFalse(z.issubset(y))
+
+    def test_q07(self):
+        self.assertEqual(chapter01.q07_template('x', 'y', 'z'), 'x時のyはz')
+        self.assertEqual(chapter01.q07_template(12, '気温', 22.4), '12時の気温は22.4')
+        self.assertEqual(chapter01.q07_template(3, 'おやつ', '金米糖'), '3時のおやつは金米糖')
