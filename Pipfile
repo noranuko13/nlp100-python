@@ -1,0 +1,14 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+mypy = "==0.620"
+pycodestyle = "==2.4.0"
+typed-ast = "==1.1.0"
+
+[requires]
+python_version = "3.7"
