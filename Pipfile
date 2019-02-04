@@ -6,9 +6,10 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-mypy = "==0.620"
-pycodestyle = "==2.4.0"
-typed-ast = "==1.1.0"
+mypy = "*"
+pycodestyle = "*"
+typed-ast = "*"
+flake8 = "*"
 
 [requires]
 python_version = "3.7"
