@@ -13,3 +13,7 @@ flake8 = "*"
 
 [requires]
 python_version = "3.7"
+
+[scripts]
+syntax = "flake8 . & pycodestyle . & mypy ."
+test = "python -m unittest discover tests"
