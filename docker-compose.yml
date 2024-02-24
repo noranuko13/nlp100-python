@@ -5,4 +5,4 @@ services:
     volumes:
       - ./:/nlp100-python
     working_dir: /nlp100-python
-    command: /bin/bash
+    command: poetry run /bin/bash

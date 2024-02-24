@@ -1,9 +1,5 @@
 # nlp100-python
 
-## Overview
-
-- Practice of Programming Python.
-
 ## Environments
 
 ```
