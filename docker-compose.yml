@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   runner:
-    image: python:3.12.2
+    build: .
     volumes:
       - ./:/nlp100-python
     working_dir: /nlp100-python
