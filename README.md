@@ -1,27 +1,10 @@
 # nlp100-python
 
-## Environments
-
-```
-$ cat /etc/redhat-release
-CentOS Linux release 7.4.1708 (Core)
-
-$ pyenv
-pyenv 1.2.5-4-gc057a80
-
-$ python --version
-Python 3.7.0
-```
-
 ## Commands
 
 ```shell
 docker compose run --rm runner
 ```
-
-## Links
-
-- [言語処理100本ノック 2015](http://www.cl.ecei.tohoku.ac.jp/nlp100/)
 
 ## License
 
