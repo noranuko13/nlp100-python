@@ -7,6 +7,11 @@ authors = ["noranuko13"]
 [tool.poetry.dependencies]
 python = "^3.12"
 
+[tool.poetry.group.dev.dependencies]
+pycodestyle = "^2.11.1"
+pytest = "^8.0.1"
+mypy = "^1.8.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
