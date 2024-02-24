@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  runner:
+    build: .
+    volumes:
+      - ./:/nlp100-python
+    working_dir: /nlp100-python
+    command: poetry run /bin/bash
