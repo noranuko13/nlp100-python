@@ -4,7 +4,14 @@
 ## Commands
 
 ```shell
+# Start container
 docker compose run --rm runner
+
+# Syntax
+flake8 . & mypy .
+
+# Test
+pytest
 ```
 
 
