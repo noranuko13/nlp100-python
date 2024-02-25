@@ -11,4 +11,3 @@ about: Solve problems in a textbook.
 ### References
 
 - http://www.cl.ecei.tohoku.ac.jp/nlp100/#sec《no》
-
