@@ -2,14 +2,13 @@
 
 - #《issue no》
 
+
 ## Checklist
 
-- [ ] mypy
-- [ ] docstring
-- [ ] unittest
-- [ ] pycodestyle
+- [ ] Syntax
+- [ ] Test
+
 
 ## Note
 
 - 
-

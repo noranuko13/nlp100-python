@@ -1,8 +1,5 @@
 from nlp100.helpers import string_helper
-from typing import cast
-from typing import Dict
-from typing import List
-from typing import Set
+from typing import cast, Dict, List, Set
 from string import Template
 
 
