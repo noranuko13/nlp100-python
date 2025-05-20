@@ -4,6 +4,9 @@
 ## Commands
 
 ```shell
+# Build Docker image
+docker compose build --no-cache
+
 # Start container
 docker compose run --rm runner
 
@@ -12,6 +15,9 @@ flake8 . & mypy .
 
 # Test
 pytest
+
+# Stop container
+docker compose down
 ```
 
 
