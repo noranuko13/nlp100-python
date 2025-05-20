@@ -1,4 +1,4 @@
-FROM python:3.12.2
+FROM python:3.13.3
 
 # Directory
 ARG ROOT_DIR="/nlp100-python"

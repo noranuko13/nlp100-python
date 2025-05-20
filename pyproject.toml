@@ -5,7 +5,7 @@ description = "Practice of Programming Python"
 authors = ["noranuko13"]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.13"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.1"
