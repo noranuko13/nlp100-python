@@ -3,16 +3,20 @@ from typing import cast, Dict, List, Set
 from string import Template
 
 
-def q00(word) -> str:
-    return string_helper.reverse(word)
+def q00(first, second) -> str:
+    return string_helper.alternate(first, second)
 
 
-def q01(word) -> str:
+def q01_odd(word) -> str:
     return string_helper.odd(word)
 
 
-def q02(first, second) -> str:
-    return string_helper.alternate(first, second)
+def q01_even(word) -> str:
+    return string_helper.even(word)
+
+
+def q02(word) -> str:
+    return string_helper.reverse(word)
 
 
 def q03(text) -> List[int]:

@@ -5,14 +5,17 @@ import re
 class TestChapter01:
 
     def test_q00(self):
-        assert chapter01.q00('stressed') == 'desserts'
+        actual = chapter01.q00('パトカー', 'タクシー')
+        assert actual == 'パタトクカシーー'
 
-    def test_q01(self):
-        assert chapter01.q01('パタトクカシーー') == 'パトカー'
+    def test_q01_odd(self):
+        assert chapter01.q01_odd('パタトクカシーー') == 'パトカー'
+
+    def test_q01_even(self):
+        assert chapter01.q01_even('パタトクカシーー') == 'タクシー'
 
     def test_q02(self):
-        actual = chapter01.q02('パトカー', 'タクシー')
-        assert actual == 'パタトクカシーー'
+        assert chapter01.q02('stressed') == 'desserts'
 
     def test_q03(self):
         text = 'Now I need a drink, alcoholic of course, ' \

@@ -6,8 +6,9 @@ about: Solve problems in a textbook.
 
 ### Overview
 
-- 
+> 
+> https://nlp100.github.io/2025/ja/ch《no》.html/#《anchor》
 
 ### Reference
 
-- http://www.cl.ecei.tohoku.ac.jp/nlp100/#sec《no》
+- 
