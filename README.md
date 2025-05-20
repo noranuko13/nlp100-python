@@ -11,7 +11,7 @@ docker compose build --no-cache
 docker compose run --rm runner
 
 # Syntax
-flake8 . & mypy .
+flake8 . && mypy .
 
 # Test
 pytest
