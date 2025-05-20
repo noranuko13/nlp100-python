@@ -1,13 +1,13 @@
-FROM python:3.12.2
+FROM python:3.13.3
 
 # Directory
 ARG ROOT_DIR="/nlp100-python"
 WORKDIR ${ROOT_DIR}
 
 # Poetry
-ENV POETRY_VERSION=1.7.1
+ENV POETRY_VERSION=2.1.3
 ENV PATH="/root/.local/bin:$PATH"
-RUN curl -sSL https://install.python-poetry.org | python -
+RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Dependencies
 ADD pyproject.toml ${ROOT_DIR}/pyproject.toml
