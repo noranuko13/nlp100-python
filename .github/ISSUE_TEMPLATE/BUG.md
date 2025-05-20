@@ -20,6 +20,6 @@ about: Fix bugs.
 
 -
 
-### References
+### Reference
 
 -

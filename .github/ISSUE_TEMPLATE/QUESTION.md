@@ -8,6 +8,6 @@ about: Solve problems in a textbook.
 
 - 
 
-### References
+### Reference
 
 - http://www.cl.ecei.tohoku.ac.jp/nlp100/#sec《no》
