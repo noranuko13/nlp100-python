@@ -1,0 +1,15 @@
+name: ci
+on:
+  push:
+    branches: ["main", "ci-*"]
+    paths-ignore: ["**.md"]
+  pull_request:
+    branches: [main]
+    paths-ignore: ["**.md"]
+  workflow_dispatch:
+jobs:
+  dummy:
+    if: ${{ false }}
+    runs-on: ubuntu-24.04
+    steps:
+      - run: ""
