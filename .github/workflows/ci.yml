@@ -7,4 +7,36 @@ on:
     branches: [main]
     paths-ignore: ["**.md"]
   workflow_dispatch:
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 jobs:
+  syntax:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - id: metadata
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: type=sha,format=short
+      - uses: docker/build-push-action@v5
+        with:
+          load: true
+          tags: ${{ steps.metadata.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+      - run: docker compose run --rm runner poetry run bash -c "flake8 . && mypy ."
+  test:
+    needs: syntax
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/build-push-action@v5
+        with:
+          load: true
+          tags: ${{ steps.metadata.outputs.tags }}
+          cache-from: type=gha
+      - run: docker compose run --rm runner poetry run pytest
