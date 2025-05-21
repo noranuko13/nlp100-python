@@ -10,9 +10,5 @@ ENV PATH="/root/.local/bin:$PATH"
 RUN curl -sSL https://install.python-poetry.org | python3 -
 
 # Dependencies
-ADD pyproject.toml ${ROOT_DIR}/pyproject.toml
-ADD poetry.lock ${ROOT_DIR}/poetry.lock
+COPY pyproject.toml poetry.lock ${ROOT_DIR}/
 RUN poetry install --no-root
-
-# Source
-ADD . ${ROOT_DIR}
