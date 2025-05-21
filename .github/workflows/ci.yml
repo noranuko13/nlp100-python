@@ -8,8 +8,3 @@ on:
     paths-ignore: ["**.md"]
   workflow_dispatch:
 jobs:
-  dummy:
-    if: ${{ false }}
-    runs-on: ubuntu-24.04
-    steps:
-      - run: ""
