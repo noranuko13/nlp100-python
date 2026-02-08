@@ -4,11 +4,10 @@ FROM python:3.14.3
 ARG ROOT_DIR="/nlp100-python"
 WORKDIR ${ROOT_DIR}
 
-# Poetry
-ENV POETRY_VERSION=2.1.3
-ENV PATH="/root/.local/bin:$PATH"
-RUN curl -sSL https://install.python-poetry.org | python3 -
+# uv
+ENV UV_PROJECT_ENVIRONMENT=/usr/local
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Dependencies
-COPY pyproject.toml poetry.lock ${ROOT_DIR}/
-RUN poetry install --no-root
+COPY pyproject.toml uv.lock ${ROOT_DIR}/
+RUN uv sync --no-install-project
