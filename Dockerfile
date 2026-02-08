@@ -10,4 +10,4 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Dependencies
 COPY pyproject.toml uv.lock ${ROOT_DIR}/
-RUN uv sync --no-install-project
+RUN uv sync --frozen --no-install-project
