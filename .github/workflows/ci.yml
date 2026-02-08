@@ -27,7 +27,7 @@ jobs:
           tags: ${{ steps.metadata.outputs.tags }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
-      - run: docker compose run --rm runner poetry run bash -c "flake8 . && mypy ."
+      - run: docker compose run --rm runner bash -c "flake8 . && mypy ."
   test:
     needs: syntax
     runs-on: ubuntu-24.04
@@ -39,4 +39,4 @@ jobs:
           load: true
           tags: ${{ steps.metadata.outputs.tags }}
           cache-from: type=gha
-      - run: docker compose run --rm runner poetry run pytest
+      - run: docker compose run --rm runner pytest

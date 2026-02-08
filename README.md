@@ -16,8 +16,8 @@ flake8 . && mypy .
 # Test
 pytest
 
-# Stop container
-docker compose down
+# Exit container
+exit
 ```
 
 
